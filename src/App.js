@@ -18,6 +18,10 @@ class App extends Component {
       .then(data => this.setState({refereeSignals: data}))
   }
 
+  selectSignal = (id) => {
+    this.state.refereeSignals.find(refereeSignal => refereeSignal.id === id)
+  }
+
   render() {
 
     return (
@@ -25,9 +29,9 @@ class App extends Component {
         <header className="App-header">
           <Switch>
             <Route exact path="/">
-              <AllSignals />
+              <AllSignals signals={this.state.refereeSignals} onSignalClick={() => this.selectSignal()}/>
             </Route>
-            <Route exact path="/handSignals/:id">
+            <Route exact path="/handSignals/:id" >
               <HandSignal />
             </Route>
           </Switch>
