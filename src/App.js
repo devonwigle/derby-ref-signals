@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
-// import { getHandSignals } from './apiCalls';
+import { getAllHandSignals } from './apiCalls';
 import './App.scss';
 import AllSignals from './Components/AllSignals/AllSignals.js'
 import HandSignal from './Components/HandSignal/HandSignal.js'
@@ -9,13 +9,16 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      handSignals: []
+      refereeSignals: []
     }
   }
 
-  // componentDidMount = () => {
-  //   this.apicheck()
-  // }
+  componentDidMount = () => {
+    getAllHandSignals()
+      .then(data => this.setState({refereeSignals: data}))
+    // console.log(handy)
+    // this.setState({handSignals: handy})
+  }
 
   // apicheck = () => {
   //   getHandSignals()
