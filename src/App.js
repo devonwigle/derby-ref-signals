@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
+import { getAllHandSignals } from './apiCalls';
+import './App.scss';
+import AllSignals from './Components/AllSignals/AllSignals.js'
+import HandSignal from './Components/HandSignal/HandSignal.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      refereeSignals: []
+    }
+  }
+
+  componentDidMount = () => {
+    getAllHandSignals()
+      .then(data => this.setState({refereeSignals: data}))
+  }
+
+  render() {
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Switch>
+            <Route exact path="/">
+              <AllSignals />
+            </Route>
+            <Route exact path="/handSignals/:id">
+              <HandSignal />
+            </Route>
+          </Switch>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
