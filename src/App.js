@@ -16,17 +16,7 @@ class App extends Component {
   componentDidMount = () => {
     getAllHandSignals()
       .then(data => this.setState({refereeSignals: data}))
-    // console.log(handy)
-    // this.setState({handSignals: handy})
   }
-
-  // apicheck = () => {
-  //   getHandSignals()
-  //     .then((result) => {
-  //       this.setState({handSignals: result})
-  //   })
-  //   console.log(this.state.handSignals)
-  // }
 
   render() {
 
