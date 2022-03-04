@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      refereeSignals: []
+      refereeSignals: [],
     }
   }
 
@@ -19,7 +19,18 @@ class App extends Component {
   }
 
   selectSignal = (id) => {
-    this.state.refereeSignals.find(refereeSignal => refereeSignal.id === id)
+    let chosenSignal = this.state.refereeSignals.find(refereeSignal => refereeSignal.id === id)
+    if (chosenSignal !== undefined) {
+      return [
+        {
+          id: chosenSignal.id,
+          name: chosenSignal.name,
+          use: chosenSignal.use,
+          motion: chosenSignal.motion,
+          image: chosenSignal.image
+        }
+      ]
+    }
   }
 
   render() {
@@ -31,9 +42,11 @@ class App extends Component {
             <Route exact path="/">
               <AllSignals signals={this.state.refereeSignals} onSignalClick={() => this.selectSignal()}/>
             </Route>
-            <Route exact path="/handSignals/:id" >
-              <HandSignal />
-            </Route>
+            <Route exact path="/handSignals/:id" render={(props) => {
+              const chosenSignal = this.selectSignal(props.match.params.id);
+              return <HandSignal chosenSignal={chosenSignal}/>;
+            }}
+            />
           </Switch>
         </header>
       </div>
