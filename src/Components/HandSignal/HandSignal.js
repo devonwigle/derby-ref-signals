@@ -9,9 +9,9 @@ const HandSignal = (props) => {
       <h2 className='chosen-title'>{`${props.chosenSignal[0].name}`}</h2>
       <img src={`${props.chosenSignal[0].image} alt=${props.chosenSignal[0].name}`} />
       <p className='chosen-title'>Use:</p>
-      <p>{`${props.chosenSignal[0].use}`}</p>
+      <p className='chosen-description'>{`${props.chosenSignal[0].use}`}</p>
       <p className='chosen-title'>Motion:</p>
-      <p>{`${props.chosenSignal[0].motion}`}</p>
+      <p className='chosen-description'>{`${props.chosenSignal[0].motion}`}</p>
       <Link to={'/'}><h2 onClick={(event) => props.clearFilter(event)} className='link-to-all'>Back to All Referee Signals</h2></Link>
     </div>
   )
