@@ -1,0 +1,26 @@
+.image-card {
+  margin: 20px 0px 20px 0px;
+}
+
+.card-holder {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 0px) and (max-width: 799px) {
+
+}
+
+@media screen and (min-width: 800px) {
+  .card-holder {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    // margin: 25px 25px 25px 25px;
+  }
+}
