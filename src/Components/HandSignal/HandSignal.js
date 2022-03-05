@@ -12,7 +12,7 @@ const HandSignal = (props) => {
       <p>{`${props.chosenSignal[0].use}`}</p>
       <p className='chosen-title'>Motion:</p>
       <p>{`${props.chosenSignal[0].motion}`}</p>
-      <Link to={'/'}><h2 className='link-to-all'>Back to All Referee Signals</h2></Link>
+      <Link to={'/'}><h2 onClick={(event) => props.clearFilter(event)} className='link-to-all'>Back to All Referee Signals</h2></Link>
     </div>
   )
 }
