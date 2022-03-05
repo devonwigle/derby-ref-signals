@@ -21,7 +21,7 @@ const AllSignals = (props) => {
   })
 
   return (
-    <div>
+    <div className='signals-container'>
       <label>Penalties Only
       <input type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
       </label>

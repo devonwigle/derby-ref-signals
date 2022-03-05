@@ -5,22 +5,32 @@
 .card-holder {
   min-height: 100vh;
   min-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1em;
   align-items: center;
-  justify-content: center;
+}
+
+.signals-container {
+  padding: 3%;
 }
 
 @media screen and (min-width: 0px) and (max-width: 799px) {
 
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) and (max-width: 1199px) {
   .card-holder {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    // margin: 25px 25px 25px 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card-holder {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
   }
 }

@@ -55,18 +55,18 @@ class App extends Component {
     return (
       <div>
         <header>Referee Hand Signals</header>
-      <body className="App">
-        <Switch>
-          <Route exact path="/">
-            {this.ifChecked()}
-          </Route>
-          <Route exact path="/handSignals/:id" render={(props) => {
-            const chosenSignal = this.selectSignal(props.match.params.id);
-            return <HandSignal chosenSignal={chosenSignal}/>;
-          }}
-          />
-        </Switch>
-      </body>
+        <body className="App">
+          <Switch>
+            <Route exact path="/">
+              {this.ifChecked()}
+            </Route>
+            <Route exact path="/handSignals/:id" render={(props) => {
+              const chosenSignal = this.selectSignal(props.match.params.id);
+              return <HandSignal chosenSignal={chosenSignal}/>;
+            }}
+            />
+          </Switch>
+        </body>
       </div>
     );
   }
