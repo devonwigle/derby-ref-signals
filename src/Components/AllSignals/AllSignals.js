@@ -7,6 +7,7 @@ const AllSignals = (props) => {
   const signalCards = props.signals.map(signal => {
     return (
       <Link to={`/handSignals/${signal.id}`}>
+        <div className='image-card'>
         <ImageCard
           key={signal.id}
           id={signal.id}
@@ -14,17 +15,19 @@ const AllSignals = (props) => {
           use={signal.use}
           image={signal.image}
         />  
+        </div>
       </Link>
     )
   })
 
   return (
-    <div>
-      <h2>Referee Hand Signals</h2>
+    <div className='signals-container'>
       <label>Penalties Only
       <input type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
       </label>
+      <section className='card-holder'>
       {signalCards}
+      </section>
     </div>
   )
 }

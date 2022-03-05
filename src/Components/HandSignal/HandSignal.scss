@@ -1,0 +1,17 @@
+@import '../../Styles/variables';
+
+.chosen-title {
+  font-size: calc(10px + 2vmin);
+  font-weight: bolder;
+}
+
+.chosen-description {
+  margin-top: -30px;
+}
+
+.link-to-all {
+  cursor: pointer;
+  color: $font;
+  text-decoration: none;
+  margin-top: 30px;
+}

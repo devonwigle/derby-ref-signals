@@ -35,6 +35,10 @@ class App extends Component {
     }
   }
 
+  clearFilter = () => {
+    this.setState({ penaltyFilter: false })
+  }
+
   filterSignals = () => {
     this.setState({penaltyFilter: !this.state.penaltyFilter})
     const filteredSignals = this.state.refereeSignals.filter(signal => signal.use.includes('penalty assessment'))
@@ -53,19 +57,20 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
-        <header className="App-header">
+      <div>
+        <header>Referee Hand Signals</header>
+        <body className="App">
           <Switch>
             <Route exact path="/">
               {this.ifChecked()}
             </Route>
             <Route exact path="/handSignals/:id" render={(props) => {
               const chosenSignal = this.selectSignal(props.match.params.id);
-              return <HandSignal chosenSignal={chosenSignal}/>;
+              return <HandSignal chosenSignal={chosenSignal} clearFilter={this.clearFilter}/>;
             }}
             />
           </Switch>
-        </header>
+        </body>
       </div>
     );
   }
