@@ -21,6 +21,9 @@ const AllSignals = (props) => {
   return (
     <div>
       <h2>Referee Hand Signals</h2>
+      <label>Penalties Only
+      <input type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
+      </label>
       {signalCards}
     </div>
   )

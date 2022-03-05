@@ -10,6 +10,8 @@ class App extends Component {
     super()
     this.state = {
       refereeSignals: [],
+      penaltyFilter: false,
+      filteredSignals: [],
     }
   }
 
@@ -33,6 +35,21 @@ class App extends Component {
     }
   }
 
+  filterSignals = () => {
+    this.setState({penaltyFilter: !this.state.penaltyFilter})
+    const filteredSignals = this.state.refereeSignals.filter(signal => signal.use.includes('penalty assessment'))
+    this.setState({filteredSignals: filteredSignals})
+    console.log(this.state)
+  }
+
+  ifChecked = () => {
+    if (!this.state.penaltyFilter) {
+        return <AllSignals signals={this.state.refereeSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals} />
+      } else {
+        return <AllSignals signals={this.state.filteredSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals}/>
+    }
+  }
+
   render() {
 
     return (
@@ -40,7 +57,7 @@ class App extends Component {
         <header className="App-header">
           <Switch>
             <Route exact path="/">
-              <AllSignals signals={this.state.refereeSignals} onSignalClick={() => this.selectSignal()}/>
+              {this.ifChecked()}
             </Route>
             <Route exact path="/handSignals/:id" render={(props) => {
               const chosenSignal = this.selectSignal(props.match.params.id);
