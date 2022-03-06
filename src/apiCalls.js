@@ -3,6 +3,11 @@ const getAllHandSignals = async () => {
     .then(response => errorCheck(response))
 }
 
+const getSingleHandSignal = async (id) => {
+  return fetch(`https://derby-api.herokuapp.com/api/v1/handsignals/${id}`)
+    .then(response => errorCheck(response))
+}
+
 const errorCheck = (response) => {
   if (!response.ok) {
     throw new Error('Please try again later')
@@ -11,4 +16,4 @@ const errorCheck = (response) => {
   }
 }
 
-export  {getAllHandSignals}
+export  {getAllHandSignals, getSingleHandSignal}
