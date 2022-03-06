@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import { getAllHandSignals } from './apiCalls';
 import './App.scss';
 import AllSignals from './Components/AllSignals/AllSignals.js'
@@ -43,8 +43,7 @@ class App extends Component {
   filterSignals = () => {
     this.setState({penaltyFilter: !this.state.penaltyFilter})
     const filteredSignals = this.state.refereeSignals.filter(signal => signal.use.includes('penalty assessment'))
-    this.setState({filteredSignals: filteredSignals})
-    console.log(this.state)
+    this.setState({ filteredSignals: filteredSignals })
   }
 
   ifChecked = () => {
