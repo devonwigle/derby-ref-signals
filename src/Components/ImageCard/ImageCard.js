@@ -11,7 +11,7 @@ const ImageCard = (props) => {
 
 export default ImageCard
 
-HandSignal.propTypes = {
+ImageCard.propTypes = {
   props: {
     id: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
