@@ -48,9 +48,9 @@ class App extends Component {
 
   ifChecked = () => {
     if (!this.state.penaltyFilter) {
-        return <AllSignals signals={this.state.refereeSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals} />
+        return <AllSignals key={Date.now()+ "-AllSignals"} signals={this.state.refereeSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals} />
       } else {
-        return <AllSignals signals={this.state.filteredSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals}/>
+        return <AllSignals key={Date.now()+ "-allsignals"} signals={this.state.filteredSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals}/>
     }
   }
 
@@ -58,8 +58,8 @@ class App extends Component {
 
     return (
       <div>
-        <header>Referee Hand Signals</header>
-        <body className="App">
+        <header data-testid="title">Referee Hand Signals</header>
+        <section className="App">
           <Switch>
             <Route exact path="/">
               {this.ifChecked()}
@@ -70,7 +70,7 @@ class App extends Component {
             }}
             />
           </Switch>
-        </body>
+        </section>
       </div>
     );
   }

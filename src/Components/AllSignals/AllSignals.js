@@ -6,8 +6,8 @@ import './AllSignals.scss'
 const AllSignals = (props) => {
   const signalCards = props.signals.map(signal => {
     return (
-      <Link to={`/handSignals/${signal.id}`}>
-        <div className='image-card'>
+      <Link to={`/handSignals/${signal.id}`} data-testid='link' key={signal.id + "-link"}>
+        <div data-testid='card' className='image-card'>
         <ImageCard
           key={signal.id}
           id={signal.id}
@@ -21,11 +21,11 @@ const AllSignals = (props) => {
   })
 
   return (
-    <div className='signals-container'>
+    <div data-testid='signals-container' className='signals-container'>
       <label>Penalties Only
-      <input type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
+        <input data-testid="checkbox" type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
       </label>
-      <section className='card-holder'>
+      <section data-testid='card-holder'  className='card-holder'>
       {signalCards}
       </section>
     </div>
