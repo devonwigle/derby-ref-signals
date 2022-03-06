@@ -4,6 +4,7 @@ import { getAllHandSignals } from './apiCalls';
 import './App.scss';
 import AllSignals from './Components/AllSignals/AllSignals.js'
 import HandSignal from './Components/HandSignal/HandSignal.js'
+import BadUrl from './Components/BadUrl/BadUrl.js'
 
 class App extends Component {
   constructor() {
@@ -69,6 +70,7 @@ class App extends Component {
               return <HandSignal chosenSignal={chosenSignal} clearFilter={this.clearFilter}/>;
             }}
             />
+            <Route render={() => <BadUrl />} />
           </Switch>
         </section>
       </div>
