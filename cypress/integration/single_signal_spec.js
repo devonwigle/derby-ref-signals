@@ -1,6 +1,6 @@
 describe("Go to the single hand single view and view its pieces", () => {
   beforeEach(() => {
-    // cy.intercept('GET', 'https://derby-api.herokuapp.com/api/v1/handsignals', { fixture: "handSignal.json" })
+    cy.intercept('GET', 'https://derby-api.herokuapp.com/api/v1/handsignals', { fixture: "handSignal.json" })
       cy.visit('http://localhost:3000')
       .get("[data-testid=signals-container]")
       .get("[data-testid=card-holder]")
