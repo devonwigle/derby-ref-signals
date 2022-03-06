@@ -1,9 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
 import './HandSignal.scss'
 
-const HandSignal = (props) => {
-  console.log(props.chosenSignal[0].name)
+const HandSignal = ({props}) => {
   return (
     <div>
       <h2 className='chosen-title'>{`${props.chosenSignal[0].name}`}</h2>
@@ -18,3 +18,6 @@ const HandSignal = (props) => {
 }
 
 export default HandSignal
+HandSignal.propTypes = {
+
+}
