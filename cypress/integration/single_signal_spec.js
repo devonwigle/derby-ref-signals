@@ -34,7 +34,10 @@ describe("Go to the single hand single view and view its pieces", () => {
     cy.get("[data-testid=motion-description]")
       .should("be.visible")
   })
+  it('should have a link to go to the official rules', () => {
+    cy.get("[data-testid=out-link]")
+  })
   it('should have a link to return to all signals', () => {
-    cy.get("a").click()
+    cy.get("[data-testid=link-back]")
   })
 })

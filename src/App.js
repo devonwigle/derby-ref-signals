@@ -68,9 +68,9 @@ class App extends Component {
             <Route exact path="/">
               {this.ifChecked()}
             </Route>
-            <Route exact path="/handSignals/:id" render={(props) => {
-              const chosenSignal = this.selectSignal(props.match.params.id);
-              return <HandSignal chosenSignal={chosenSignal} clearFilter={this.clearFilter}/>;
+            <Route exact path="/handSignals/:id" render={({match}) => {
+              const chosenSignal = this.selectSignal(match.params.id);
+              return <HandSignal id={match.params.id} chosenSignal={chosenSignal} clearFilter={this.clearFilter}/>;
             }}
             />
             <Route render={() => <BadUrl clearFilter={this.clearFilter}/>} />

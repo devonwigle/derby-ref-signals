@@ -15,5 +15,5 @@ const BadUrl = (props) => {
 export default BadUrl
 
 BadUrl.propTypes = {
-  clearFilter: PropTypes.func.isRequired
+  clearFilter: PropTypes.func
 }
