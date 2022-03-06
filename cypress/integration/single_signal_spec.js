@@ -34,6 +34,14 @@ describe("Go to the single hand single view and view its pieces", () => {
     cy.get("[data-testid=motion-description]")
       .should("be.visible")
   })
+  it('should be able to visit the page and see the rule label', () => {
+    cy.get("[data-testid=section-title]")
+      .should("be.visible")
+  })
+  it('should be able to visit the page and see the rule description', () => {
+    cy.get("[data-testid=section-description]")
+      .should("be.visible")
+  })
   it('should have a link to go to the official rules', () => {
     cy.get("[data-testid=out-link]")
   })

@@ -14,7 +14,9 @@ const AllSignals = (props) => {
           key={signal.id}
           id={signal.id}
           name={signal.name}
+          motion={signal.motion}
           use={signal.use}
+          rule={signal.rule}
           image={signal.image}
         />  
         </div>
