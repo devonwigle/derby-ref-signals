@@ -20,7 +20,5 @@ const HandSignal = (props) => {
 export default HandSignal;
 
 HandSignal.propTypes = {
-  props:  {
-    chosenSignal: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired
-  }
+  chosenSignal: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired
 }

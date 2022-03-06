@@ -37,7 +37,7 @@ const AllSignals = (props) => {
 export default AllSignals
 
 AllSignals.propTypes = {
-  props: {
-    signals: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired
-  }
+  signals: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  onSignalClick: PropTypes.func.isRequired,
+  onCheckboxClick: PropTypes.func.isRequired
 }
