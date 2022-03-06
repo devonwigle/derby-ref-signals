@@ -1,0 +1,15 @@
+[
+  {
+    "id": "hs1",
+    "name": "Back Block",
+    "use": "penalty assessment",
+    "motion": "referee holds two hands in front of body and then extends arms",
+    "image": "https://i.postimg.cc/PrVjzcgm/Back-Block.png"
+  },
+  {
+    "id": "hs19",
+    "name": "Official Timeout",
+    "use": "indicate an official timeout is occuring",
+    "motion": "official holds arms up parallel to ground with hands alternating taping shoulders and being straight out",
+    "image": "https://i.postimg.cc/C5dvFvcg/Official-Timeout.png"}
+]

@@ -5,7 +5,7 @@ import './HandSignal.scss'
 const HandSignal = (props) => {
   console.log(props.chosenSignal[0].name)
   return (
-    <div>
+    <div key={props.id + "single"}>
       <h2 className='chosen-title'>{`${props.chosenSignal[0].name}`}</h2>
       <img src={`${props.chosenSignal[0].image} alt=${props.chosenSignal[0].name}`} />
       <p className='chosen-title'>Use:</p>

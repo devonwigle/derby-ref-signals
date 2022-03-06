@@ -3,8 +3,8 @@ import './ImageCard.scss'
 
 const ImageCard = (props) => {
   return (
-    <div>
-      <img src={props.image} alt={props.name} />
+    <div data-testid="image-div">
+      <img data-testid="image" key={props.id + "-image"} src={props.image} alt={props.name} />
     </div>
   )
 }
