@@ -6,9 +6,13 @@ describe("Go to the single hand single view and view its pieces", () => {
       .get("[data-testid=card-holder]")
       .get("[data-testid=link]").first().click()
   })
-  it('should be able to visit the page and see the hand signal name', () => {
+  it('should be able to visit the page and the url should reflect that', () => {
     cy.get("[data-testid=chosen-title]")
       .should("be.visible")
+  })
+  it('should be able to visit the page and see the hand signal name', () => {
+    cy.url()
+      .should("eq", "http://localhost:3000/handSignals/hs1")
   })
   it('should be able to visit the page and see the image', () => {
     cy.get("[data-testid=chosen-image]")
