@@ -23,7 +23,7 @@ const AllSignals = (props) => {
   return (
     <div data-testid='signals-container' className='signals-container'>
       <label>Penalties Only
-      <input data-testid="checkbox" type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
+        <input data-testid="checkbox" type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
       </label>
       <section data-testid='card-holder'  className='card-holder'>
       {signalCards}
