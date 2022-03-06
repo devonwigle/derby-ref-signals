@@ -70,7 +70,7 @@ class App extends Component {
               return <HandSignal chosenSignal={chosenSignal} clearFilter={this.clearFilter}/>;
             }}
             />
-            <Route render={() => <BadUrl />} />
+            <Route render={() => <BadUrl clearFilter={this.clearFilter}/>} />
           </Switch>
         </section>
       </div>

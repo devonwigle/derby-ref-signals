@@ -1,13 +1,19 @@
 import React from 'react'
-import '../CSS/BadUrl.scss'
+import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
+import './BadUrl.scss'
 
-const BadUrl = () => {
+const BadUrl = (props) => {
   return (
     <div>
       <h2 className="bad-url-error">Trouble processing your request. </h2>
-      <Link to={'/'}><h2 onClick={(event) => props.clearFilter(event)} className='link-to-all'>To All Referee Signals</h2></Link>
+      <Link to={'/'}><h2 onClick={(event) => props.clearFilter(event)} className='link-to-all'>Go To All Referee Signals</h2></Link>
     </div>
   )
 }
 
 export default BadUrl
+
+BadUrl.propTypes = {
+  clearFilter: PropTypes.func.isRequired
+}
