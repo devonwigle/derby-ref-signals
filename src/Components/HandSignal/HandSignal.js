@@ -32,6 +32,8 @@ class HandSignal extends Component {
         <p data-testid="use-description" className='chosen-description'>{`${this.state.signal.use}`}</p>
         <p data-testid="motion-title" className='chosen-title'>Motion:</p>
         <p data-testid="motion-description" className='chosen-description'>{`${this.state.signal.motion}`}</p>
+        <p data-testid="section-title" className='chosen-title'>Rule Section:</p>
+        <p data-testid="section-description" className='chosen-description'>{`${this.state.signal.rule}`}</p>
         <a href="https://rules.wftda.com/" data-testid="out-link">See rules</a>
         <Link data-testid="link-back" to={'/'}><h2 onClick={(event) => this.props.clearFilter(event)} className='link-to-all'>Back to All Referee Signals</h2></Link>
       </div>
@@ -45,6 +47,7 @@ HandSignal.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   use: PropTypes.string,
+  rule: PropTypes.string,
   image: PropTypes.string,
   motion: PropTypes.string,
   clearFilter: PropTypes.func
