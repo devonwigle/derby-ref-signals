@@ -22,7 +22,7 @@ class HandSignal extends Component {
   render() {
     console.log(this.state.signal)
     if (!this.state.signal) {
-      return <BadUrl />
+      return <BadUrl clearFilter={this.clearFilter}/>
     }
     return (
       <div key={this.state.signal.id + "single"}>
@@ -32,8 +32,8 @@ class HandSignal extends Component {
         <p data-testid="use-description" className='chosen-description'>{`${this.state.signal.use}`}</p>
         <p data-testid="motion-title" className='chosen-title'>Motion:</p>
         <p data-testid="motion-description" className='chosen-description'>{`${this.state.signal.motion}`}</p>
-        <Link to={{pathname: "https://rules.wftda.com/"}}>See rules</Link>
-        <Link to={'/'}><h2 onClick={(event) => this.props.clearFilter(event)} className='link-to-all'>Back to All Referee Signals</h2></Link>
+        <a href="https://rules.wftda.com/" data-testid="out-link">See rules</a>
+        <Link data-testid="link-back" to={'/'}><h2 onClick={(event) => this.props.clearFilter(event)} className='link-to-all'>Back to All Referee Signals</h2></Link>
       </div>
     )
   }
