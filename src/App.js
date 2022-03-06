@@ -13,12 +13,16 @@ class App extends Component {
       refereeSignals: [],
       penaltyFilter: false,
       filteredSignals: [],
+      error: '',
     }
   }
 
   componentDidMount = () => {
     getAllHandSignals()
-      .then(data => this.setState({refereeSignals: data}))
+      .then(data => {
+        this.setState({refereeSignals: data})
+      })
+      .catch(error => this.setState({error: error.message}))
   }
 
   selectSignal = (id) => {
