@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ImageCard.scss'
 
 const ImageCard = (props) => {
@@ -10,3 +11,11 @@ const ImageCard = (props) => {
 }
 
 export default ImageCard
+
+ImageCard.propTypes = {
+  props: {
+    id: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }
+}

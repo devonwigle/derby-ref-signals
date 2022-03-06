@@ -1,9 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
 import './HandSignal.scss'
 
 const HandSignal = (props) => {
-  console.log(props.chosenSignal[0].name)
   return (
     <div key={props.id + "single"}>
       <h2 data-testid="chosen-title" className='chosen-title'>{`${props.chosenSignal[0].name}`}</h2>
@@ -17,4 +17,10 @@ const HandSignal = (props) => {
   )
 }
 
-export default HandSignal
+export default HandSignal;
+
+HandSignal.propTypes = {
+  props:  {
+    chosenSignal: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired
+  }
+}
