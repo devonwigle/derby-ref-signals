@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Roller Derby Referee Signals
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Click [HERE](https://frontend.turing.edu/projects/module-3/showcase.html) to view the project spec
+- Click [HERE]() to view the deployed site
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Abstract](#abstract)
+- [Tech Used](#tech-used)
+- [Installation and Set-Up](#installation-and-set-up)
+- [Features](#features)
+- [See the Site in Action](#see-the-site-in-action)
+- [Future Goals](#future-goals)
+- [Stretch Goals](#stretch-goals)
+- [Created By](#created-by)
+- [Credit](#credit)
 
-### `npm start`
+## Abstract
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Are you excited for your first roller derby game?  Do you know what the referees are doing out there? This app will give you the chance to learn what referee hand signal are for.  If your favorite player just took a trip to the penalty box, but you are not sure why, just filter by penalties.  If you want a deep dive, we also included the rules section and a link to the rules, so you can learn more.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Used
 
-### `npm test`
+- React
+- React Router
+- Derby API (built by us using Express, JavaScript, hosted on Heroku)
+  - [See the code](https://github.com/devonwigle/derby-api)
+  - [See the deployed API](https://derby-api.herokuapp.com/api/v1/handsignals)
+- Figma [Wireframe](https://www.figma.com/file/SBQCNZpGIBoYm1PfeVVd4g/Derby-Ref-Signals?node-id=2%3A2)
+- [GitHub Project Board](https://github.com/users/devonwigle/projects/4)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Set-Up
 
-### `npm run build`
+To install this project, please see below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+1. Clone down this Repository using `git clone`
+2. Next, `cd` into the cloned repository and `npm install` to install library dependancies
+3. Finally, run `npm start` and open up localhost at the port indicated to view the webpage
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Alternatively, you can access the deployed site [HERE]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- View all officiating hand signals
+- Individual views of hand signals and use
+- Connect directly to the rules to learn more
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## See the Site!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The user is greeted by pictures of referee hand signals. Here you may filter by penalty or not. Click an image to learn more
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img width="1440" alt="AllSignals" src="https://user-images.githubusercontent.com/88619501/156945914-3b94ece0-96c1-4e01-9531-dd134360be3a.png">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+After clicking an image the user will see their selected referee hand signal and some additional information about it.  The user can use the rule reference to learn more when they click on the rules link.
 
-## Learn More
+<img width="1000" alt="One Signal" src="https://user-images.githubusercontent.com/88619501/156945912-ba61a61f-0c94-46e5-8e39-0b93b4cd6f60.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Future Goals
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Add whistle signals
 
-### Code Splitting
+## Created By:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Devon Wigle](https://github.com/devonwigle)
 
-### Analyzing the Bundle Size
+## Credit
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Women's Flat Track Derby Assocation 
+  - [The Rules](https://rules.wftda.com/index.html)
+  - [WFTDA Officiating cues, codes and signals](https://static.wftda.com/officiating/wftda-officiating-cues-codes-and-signals.pdf)
