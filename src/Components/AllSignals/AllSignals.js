@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import './AllSignals.scss'
 
 const AllSignals = (props) => {
-  console.log('propps', props)
   const signalCards = props.signals.map(signal => {
     return (
       <Link to={`/handSignals/${signal.id}`} data-testid='link' key={signal.id + "-link"}>

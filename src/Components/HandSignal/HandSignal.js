@@ -20,7 +20,6 @@ class HandSignal extends Component {
   }
 
   render() {
-    console.log(this.state.signal)
     if (!this.state.signal) {
       return <BadUrl clearFilter={this.clearFilter}/>
     }
