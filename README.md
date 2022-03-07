@@ -1,7 +1,7 @@
 # Roller Derby Referee Signals
 
 - Click [HERE](https://frontend.turing.edu/projects/module-3/showcase.html) to view the project spec
-- Click [HERE]() to view the deployed site
+- Click [HERE](https://derby-ref-signals-jw5jrsp7i-devonwigle.vercel.app/) to view the deployed site
 
 ## Table of Contents
 
@@ -39,7 +39,7 @@ To install this project, please see below:
 3. Finally, run `npm start` and open up localhost at the port indicated to view the webpage
 ```
 
-Alternatively, you can access the deployed site [HERE]()
+Alternatively, you can access the deployed site [HERE](https://derby-ref-signals-jw5jrsp7i-devonwigle.vercel.app/)
 
 ## Features
 
