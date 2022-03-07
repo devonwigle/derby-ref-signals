@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './ImageCard.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import "./ImageCard.scss"
 
 const ImageCard = (props) => {
   return (

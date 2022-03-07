@@ -1,15 +1,14 @@
-import React from 'react'
-import ImageCard from '../ImageCard/ImageCard'
-import {Link} from 'react-router-dom'
-import PropTypes from 'prop-types';
-import './AllSignals.scss'
+import React from "react"
+import ImageCard from "../ImageCard/ImageCard"
+import {Link} from "react-router-dom"
+import PropTypes from "prop-types";
+import "./AllSignals.scss"
 
 const AllSignals = (props) => {
-  console.log('propps', props)
   const signalCards = props.signals.map(signal => {
     return (
-      <Link to={`/handSignals/${signal.id}`} data-testid='link' key={signal.id + "-link"}>
-        <div data-testid='card' className='image-card'>
+      <Link to={`/handSignals/${signal.id}`} data-testid="link" key={signal.id + "-link"}>
+        <div data-testid="card" className="image-card">
         <ImageCard
           key={signal.id}
           id={signal.id}
@@ -25,11 +24,11 @@ const AllSignals = (props) => {
   })
 
   return (
-    <div data-testid='signals-container' className='signals-container'>
+    <div data-testid="signals-container" className="signals-container">
       <label>Penalties Only
         <input data-testid="checkbox" type="checkbox" name="penaltiesOnly" onChange={props.onCheckboxClick}></input>
       </label>
-      <section data-testid='card-holder'  className='card-holder'>
+      <section data-testid="card-holder"  className="card-holder">
       {signalCards}
       </section>
     </div>
