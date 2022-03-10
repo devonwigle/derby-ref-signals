@@ -14,6 +14,7 @@ class App extends Component {
       penaltyFilter: false,
       filteredSignals: [],
       error: "",
+      isChecked: false
     }
   }
 
@@ -42,9 +43,11 @@ class App extends Component {
 
   clearFilter = () => {
     this.setState({ penaltyFilter: false })
+    this.setState({isChecked: !this.state.isChecked})
   }
 
   filterSignals = () => {
+    this.setState({ isChecked: !this.state.isChecked })
     this.setState({penaltyFilter: !this.state.penaltyFilter})
     const filteredSignals = this.state.refereeSignals.filter(signal => signal.use.includes("penalty assessment"))
     this.setState({ filteredSignals: filteredSignals })
@@ -52,9 +55,9 @@ class App extends Component {
 
   ifChecked = () => {
     if (!this.state.penaltyFilter) {
-        return <AllSignals key={Date.now()+ "-AllSignals"} signals={this.state.refereeSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals} />
+      return <AllSignals key={Date.now() + "-AllSignals"} filter={this.state.penaltyFilter} signals={this.state.refereeSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals} isChecked={this.state.isChecked}/>
       } else {
-        return <AllSignals key={Date.now()+ "-allsignals"} signals={this.state.filteredSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals}/>
+      return <AllSignals key={Date.now() + "-allsignals"} signals={this.state.filteredSignals} onSignalClick={this.selectSignal} onCheckboxClick={this.filterSignals} isChecked={this.state.isChecked}/>
     }
   }
 
