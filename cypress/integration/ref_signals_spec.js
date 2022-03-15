@@ -1,19 +1,19 @@
 describe("Load referee signals page and render referee signals", () => {
+  beforeEach(() => {
+    cy.intercept('GET', 'https://derby-api.herokuapp.com/api/v1/handsignals', { fixture: "handSignal.json" })
+      .visit("http://localhost:3000")
+  })
   it("Should be able to visit the page and render title", () => {
-    cy.visit("http://localhost:3000")
-      .get("[data-testid=title]")
+    cy.get("[data-testid=title]")
       .should("be.visible")
   })
   it('should be able to see and click the checkbox', () => {
-    cy.visit("http://localhost:3000")
-      .get("[data-testid=signals-container]")
+    cy.get("[data-testid=signals-container]")
       .get("[data-testid=checkbox]")
       .check()
   })
   it('should be able to visit the page and see all the referee signals', () => {
-    cy.intercept('GET', 'https://derby-api.herokuapp.com/api/v1/handsignals', {fixture: "handSignal.json" }) 
-      .visit('http://localhost:3000')
-      .get("[data-testid=signals-container]")
+    cy.get("[data-testid=signals-container]")
       .get("[data-testid=card-holder]")
       .get("[data-testid=link]")
       .get("[data-testid=card]")
@@ -22,9 +22,7 @@ describe("Load referee signals page and render referee signals", () => {
       .should("have.attr", "src")
   })
   it('should be able to click the checkbox and see filtered signals', () => {
-    cy.intercept('GET', 'https://derby-api.herokuapp.com/api/v1/handsignals', { fixture: "handSignal.json" }) 
-      .visit('http://localhost:3000')
-      .get("[data-testid=signals-container]")
+    cy.get("[data-testid=signals-container]")
       .get("[data-testid=card-holder]")
       .get("[data-testid=link]")
       .get("input[type=checkbox]").check({force: true})
@@ -34,9 +32,7 @@ describe("Load referee signals page and render referee signals", () => {
       .should("have.attr", "src")
   })
   it('should be able to check the checkbox and see filtered signals then uncheck and see all referee signals', () => {
-    cy.intercept('GET', 'https://derby-api.herokuapp.com/api/v1/handsignals', { fixture: "handSignal.json" })
-      .visit('http://localhost:3000')
-      .get("[data-testid=signals-container]")
+    cy.get("[data-testid=signals-container]")
       .get("[data-testid=card-holder]")
       .get("[data-testid=link]")
       .get("input[type=checkbox]").check({ force: true })
