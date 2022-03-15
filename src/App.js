@@ -25,7 +25,7 @@ class App extends Component {
       })
       .catch(error => this.setState({error: error.message}))
   }
-
+  
   selectSignal = (id) => {
     let chosenSignal = this.state.refereeSignals.find(refereeSignal => refereeSignal.id === id)
     if (chosenSignal !== undefined) {
