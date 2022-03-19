@@ -1,7 +1,7 @@
 # Roller Derby Referee Signals
 
 - Click [HERE](https://frontend.turing.edu/projects/module-3/showcase.html) to view the project spec
-- Click [HERE](https://derby-ref-signals-jw5jrsp7i-devonwigle.vercel.app/) to view the deployed site
+- Click [HERE](https://derby-ref-signals.vercel.app/) to view the deployed site
 
 ## Table of Contents
 
