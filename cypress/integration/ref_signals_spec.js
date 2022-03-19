@@ -4,7 +4,7 @@ describe("Load referee signals page and render referee signals", () => {
       .get("[data-testid=title]")
       .should("be.visible")
   })
-  it('should be able to see and click the checkbox', () => {
+  it.skip('should be able to see and click the checkbox', () => {
     cy.visit("http://localhost:3000")
       .get("[data-testid=signals-container]")
       .get("[data-testid=checkbox]")
